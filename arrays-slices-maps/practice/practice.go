@@ -8,7 +8,7 @@ type Product struct {
 	Price float64
 }
 
-func practice() {
+func main() {
 	//  1. Create a new array (!) that contains three hobbies you have
 	//     Output (print) that array in the command line.\
 	fmt.Println("Exercise 1")
