@@ -1,34 +1,32 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// transformFn is a type that represents a function that takes an int and returns an int
-type transformFn func(int) int
-
+// Recursion is a process in which a function calls itself as a subroutine.
+// This allows the function to be repeated several times, since it calls itself during its execution.
+// Recursion is best applied when it makes the solution clearer and easier to understand.
+// It is also useful when the problem can be broken down into smaller subproblems of the same type.
+// In Go, recursion is used in many algorithms, such as the quicksort algorithm and the binary search algorithm.
 func main() {
-	numbers := []int{1, 2, 3, 4}
-	doubled := transformNumbers(numbers, double)
-	tripled := transformNumbers(numbers, triple)
-
-	fmt.Println(doubled)
-	fmt.Println(tripled)
+	fact := factorial(5)
+	fmt.Println(fact)
 }
 
-// transformNumbers takes a slice of numbers and a function that transforms a number and returns a slice of transformed numbers
-func transformNumbers(numbers []int, f transformFn) []int {
-	var dNumbers []int
-	for _, n := range numbers {
-		dNumbers = append(dNumbers, f(n))
+// Factorial is a mathematical function that multiplies a number by every number below it.
+// For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
+// The factorial of 0 is 1.
+func factorial(n int) int {
+	// Recursive case
+	if n == 0 {
+		return 1
 	}
-	return dNumbers
-}
+	return n * factorial(n-1)
+	// Base case
+	// result := 1 // The factorial of 0 is 1
 
-func double(n int) int {
-	return n * 2
-}
+	// for i := 1; i <= n; i++ {
+	// 	result *= i
+	// }
 
-func triple(n int) int {
-	return n * 3
+	// return result
 }
